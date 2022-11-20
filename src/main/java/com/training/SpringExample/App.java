@@ -1,9 +1,7 @@
 package com.training.SpringExample;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.training.springcore.model.Employee;
 
@@ -15,15 +13,19 @@ public class App
 {
     public static void main( String[] args )
     {
-    	Resource resource = new ClassPathResource("application.xml");
-		BeanFactory factory = new XmlBeanFactory(resource);
+    	Employee e = new Employee();
+    	
+//    	Resource resource = new ClassPathResource("application.xml");
+//		BeanFactory factory = new XmlBeanFactory(resource);
+		
+    	ApplicationContext factory =    new ClassPathXmlApplicationContext("application.xml"); 
 
 		Employee student = (Employee) factory.getBean("empBean");
 		student.displayInfo();
 		student.setName("welcome");
 		
 		
-		Employee student1 = (Employee) factory.getBean("empBean");
+		Employee student1 = (Employee) factory.getBean("empBean1");
 		student1.displayInfo();
 	
     }
