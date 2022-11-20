@@ -13,20 +13,14 @@ public class App
 {
     public static void main( String[] args )
     {
-    	Employee e = new Employee();
-    	
-//    	Resource resource = new ClassPathResource("application.xml");
-//		BeanFactory factory = new XmlBeanFactory(resource);
-		
     	ApplicationContext factory =    new ClassPathXmlApplicationContext("application.xml"); 
 
 		Employee student = (Employee) factory.getBean("empBean");
-		student.displayInfo();
 		student.setName("welcome");
-		
+		System.out.println(student);
 		
 		Employee student1 = (Employee) factory.getBean("empBean1");
-		student1.displayInfo();
+		System.out.println(student1);
 	
     }
 }
