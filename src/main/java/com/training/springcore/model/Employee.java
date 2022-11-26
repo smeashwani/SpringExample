@@ -19,7 +19,7 @@ public class Employee {
 		this.name = name;
 	}
 
-	public Employee(String name, int age, int salary,Address address) {
+	public Employee(String name, int age, Address address, int salary) {
 		this.name = name;
 		this.age=age;
 		this.salary=salary;
