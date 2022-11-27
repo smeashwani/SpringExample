@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.training.springcore.model.DatabaseSingleton;
 import com.training.springcore.model.Employee;
 
-public class InnerBean {
+public class Example_4_InnerBean {
 	 public static void main( String[] args )
 	    {
 	    	ApplicationContext factory = new ClassPathXmlApplicationContext("innerBean.xml"); 

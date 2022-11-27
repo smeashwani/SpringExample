@@ -3,7 +3,12 @@ package com.training.springcore.model;
 import java.util.List;
 import java.util.Map;
 
-public class Employee {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+abstract public class Employee {//implements InitializingBean , DisposableBean{
 
 	private String name;
 	int age;
@@ -12,6 +17,22 @@ public class Employee {
 	List<String> qualification;
 	Map<Address, String> answers;
 
+	public abstract Address applyAddress();
+	
+	  public void afterPropertiesSet() throws Exception {
+		System.out.println("afterPropertiesSet");
+		//this.setAddress(applyAddress());
+		this.address = applyAddress();
+	  }
+	  
+	  public void destroy() throws Exception {
+		System.out.println("destroy of bean");
+	}
+//	public void applyAddress(){
+//		ApplicationContext factory = new ClassPathXmlApplicationContext("innerBean.xml"); 
+//		Address obj =  factory.getBean("address1",Address.class);
+//		this.address = obj;
+//	}
 	public Employee() {
 	}
 

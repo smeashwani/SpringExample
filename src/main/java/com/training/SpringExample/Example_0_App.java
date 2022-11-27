@@ -9,7 +9,7 @@ import com.training.springcore.model.Employee;
  * Hello world!
  *
  */
-public class App 
+public class Example_0_App 
 {
     public static void main( String[] args )
     {

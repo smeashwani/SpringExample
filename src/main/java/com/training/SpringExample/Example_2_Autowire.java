@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.training.springcore.model.Employee;
 
-public class Autowire {
+public class Example_2_Autowire {
 	  public static void main( String[] args )
 	    {
 	    	ApplicationContext factory =    new ClassPathXmlApplicationContext("autowire.xml"); 

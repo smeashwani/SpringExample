@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.training.springcore.model.DatabaseSingleton;
 
-public class Factory {
+public class Example_3__Factory {
 	 public static void main( String[] args )
 	    {
 	    	ApplicationContext factory =    new ClassPathXmlApplicationContext("factory.xml"); 
