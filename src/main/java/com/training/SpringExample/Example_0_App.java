@@ -1,6 +1,7 @@
 package com.training.SpringExample;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,8 +19,8 @@ public class Example_0_App
     {
     	ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
     	EmployeeDao edao = app.getBean("edao", EmployeeDao.class);
-    	Employee emp = new Employee(11,"Guest",80_000);
-    	edao.saveEmployeeByPreparedStatement(emp);
-    	System.out.println("save successfully");
+    	
+    	List<Employee> allEmployees = edao.getAllEmployees();
+    	allEmployees.stream().forEach(System.out::println);
     }
 }

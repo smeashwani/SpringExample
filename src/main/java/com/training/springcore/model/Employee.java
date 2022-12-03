@@ -4,7 +4,9 @@ public class Employee {
 	private int id;
 	private String name;
 	private int salary;
-	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
 	public Employee(int id, String name, int salary) {
 		super();
 		this.id = id;
