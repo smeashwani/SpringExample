@@ -20,7 +20,7 @@ public class Example_0_App
     	ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
     	EmployeeDao edao = app.getBean("edao", EmployeeDao.class);
     	
-    	List<Employee> allEmployees = edao.getAllEmployees();
+    	List<Employee> allEmployees = edao.getAllEmployeesRowMapper();
     	allEmployees.stream().forEach(System.out::println);
     }
 }
