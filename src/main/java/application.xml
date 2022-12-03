@@ -5,47 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="address" class="com.training.springcore.model.Address">
-		<property name="city" value="ghaziabad"></property>
-		<property name="state" value="UP"></property>
-	</bean>
-	<bean id="java" class="java.lang.String">
-		<constructor-arg name="original" value="welcome to java"></constructor-arg>
-	</bean>
 	<bean id="empBean" class="com.training.springcore.model.Employee">
 		<property name="name">
 			<value>DUCAT</value>
 		</property>
 		<property name="age" value="25"></property>
 		<property name="salary" value="25000"></property>
-		<property name="address" ref="address"></property>
-		<property name="qualification">
-			<list>
-				<value>Java is a programming language</value>
-				<value>Java is a platform</value>
-				<ref bean="java" /> 
-			</list>
-		</property>
-		<property name="answers">
-			<map>
-				<entry key-ref="address" value="DUCAT"></entry>
-				<entry key="key1" value="DUCAT"></entry>
-				<entry key="answer2" value="user2"></entry>
-			</map>
-		</property>
-
-	</bean>
-
-	<bean id="empBean1" class="com.training.springcore.model.Employee">
-		<constructor-arg name="name">
-			<value>NIIT</value>
-		</constructor-arg>
-
-		<constructor-arg name="age" value="30"></constructor-arg>
-		<constructor-arg name="salary" value="30000"></constructor-arg>
-		<constructor-arg name="address" ref="address">
-
-		</constructor-arg>
 	</bean>
 
 </beans>

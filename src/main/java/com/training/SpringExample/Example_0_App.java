@@ -18,9 +18,7 @@ public class Example_0_App
 		Employee student = (Employee) factory.getBean("empBean");
 		student.setName("welcome");
 		System.out.println(student);
-		
-		Employee student1 = (Employee) factory.getBean("empBean1");
-		System.out.println(student1);
+	
 	
     }
 }
