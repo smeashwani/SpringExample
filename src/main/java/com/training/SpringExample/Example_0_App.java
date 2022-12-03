@@ -20,7 +20,8 @@ public class Example_0_App
     	ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
     	EmployeeDao edao = app.getBean("edao", EmployeeDao.class);
     	
-    	List<Employee> allEmployees = edao.getAllEmployeesRowMapper();
-    	allEmployees.stream().forEach(System.out::println);
+    	edao.saveEmployeeByNamedParameter(new Employee(55, "DUCAT", 55_000));
+    	System.out.println("saved");
+    	
     }
 }
