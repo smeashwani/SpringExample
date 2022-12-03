@@ -5,12 +5,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="empBean" class="com.training.springcore.model.Employee">
-		<property name="name">
-			<value>DUCAT</value>
-		</property>
-		<property name="age" value="25"></property>
-		<property name="salary" value="25000"></property>
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/myDb" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 	</bean>
 
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+
+	<bean id="edao" class="com.training.springcore.repo.EmployeeDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
 </beans>

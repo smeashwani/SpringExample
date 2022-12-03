@@ -1,22 +1,27 @@
 package com.training.springcore.model;
 
 public class Employee {
-
+	private int id;
 	private String name;
-	int age;
-	int salary;
+	private int salary;
 	
+	public Employee(int id, String name, int salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
 	}
 	public int getSalary() {
 		return salary;
@@ -26,8 +31,9 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", age=" + age + ", salary=" + salary + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
+	
 	
 	
 }
