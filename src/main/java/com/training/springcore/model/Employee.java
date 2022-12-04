@@ -1,6 +1,7 @@
 package com.training.springcore.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,12 +10,9 @@ public class Employee {
 	private String name="Guest";
 	private int salary = 10_000;
 	
-	private Address adddress;
-	
 	@Autowired
-	public Employee(Address add) {
-		this.adddress= add;
-	}
+	@Qualifier(value="address2")
+	private IAddress adddress;
 	
 	public Employee() {
 		// TODO Auto-generated constructor stub
@@ -43,12 +41,12 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public Address getAdddress() {
+	public IAddress getAdddress() {
 		return adddress;
 	}
 	
 	
-	public void setAdddress(Address adddress) {
+	public void setAdddress(IAddress adddress) {
 		this.adddress = adddress;
 	}
 	@Override

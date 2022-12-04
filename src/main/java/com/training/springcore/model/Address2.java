@@ -1,15 +1,13 @@
 package com.training.springcore.model;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component(value="address")
-//@Primary
-public class Address implements IAddress {
+@Component(value="address2")
+public class Address2 implements IAddress {
 	private String city= "city";
 	private String state= "state";
 	
-	public Address() {
+	public Address2() {
 	}
 	
 	public String getCity() {
@@ -26,7 +24,7 @@ public class Address implements IAddress {
 	}
 	@Override
 	public String toString() {
-		return "Address [city=" + city + ", state=" + state + "]";
+		return "Address2 [city=" + city + ", state=" + state + "]";
 	}
 	
 	
