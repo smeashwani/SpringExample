@@ -1,9 +1,15 @@
 package com.training.springcore.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
 	private int id;
 	private String name;
 	private int salary;
+	
+	
+	
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
