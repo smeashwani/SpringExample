@@ -5,25 +5,5 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="ds"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/myDb" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
-	</bean>
-
-	<bean id="jdbcTemplate"
-		class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="ds"></property>
-	</bean>
-	<bean id="jtemplate"
-		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-		<constructor-arg ref="ds"></constructor-arg>
-	</bean>
-	<bean id="edao" class="com.training.springcore.repo.EmployeeDao">
-		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
-		<property name="namedJdbcTemplate" ref="jtemplate"></property>
-	</bean>
+	
 </beans>
