@@ -1,43 +1,40 @@
 package com.training.springcore.model;
 
-import org.springframework.context.annotation.Primary;
+import java.util.Arrays;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Component
 public class Address {
-	private String city = "city";
-	private String state = "state";
-
-	public void turnOn() {
-		System.out.println("Load operating system");
-	}
-
-	public void turnOff() {
-		System.out.println("Close all programs");
-	}
+	private String companyName = "CompanyName";
+	@Value("${common.state}")
+	private String state;
+	
+	
+	@Value("${common.city1: defaultCity}")
+	private String city;
+	//@Value("${Path}")
+	@Value("${USERNAME}")
+	private String path;
+	@Value("${listOfValues}")
+	private String[] block;
+	@Value("#{${valuesMap}}")
+	private Map<String, Integer> valuesMap;
 
 	public Address() {
 		System.out.println("Address.Address()");
 	}
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
+	public String getCompanyName() {
+		return companyName;
 	}
 
 	@Override
 	public String toString() {
-		return "Address [city=" + city + ", state=" + state + "]";
+		return "Address [companyName=" + companyName + ", state=" + state + ", city=" + city + ", path=" + path
+				+ ", block=" + Arrays.toString(block) + ", valuesMap=" + valuesMap + "]";
 	}
 
 }
