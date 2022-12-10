@@ -1,21 +1,36 @@
 package com.training.springcore.model;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
+@Lazy
 public class Employee {
 	private int id =101;
 	private String name="Guest";
 	private int salary = 10_000;
 	
-	@Autowired
-	@Qualifier(value="address2")
-	private IAddress adddress;
+	@Autowired(required = false)
+	@Lazy
+	private Address adddress;
+	
+	
+	@PostConstruct
+	public void turnOn() {
+		System.out.println("Load operating system");
+	}
+
+	@PreDestroy
+	public void turnOff() {
+		System.out.println("Close all programs");
+	}
 	
 	public Employee() {
-		// TODO Auto-generated constructor stub
+		System.out.println("Employee.Employee()");
 	}
 	public Employee(int id, String name, int salary) {
 		super();
@@ -41,12 +56,12 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public IAddress getAdddress() {
+	public Address getAdddress() {
 		return adddress;
 	}
 	
 	
-	public void setAdddress(IAddress adddress) {
+	public void setAdddress(Address adddress) {
 		this.adddress = adddress;
 	}
 	@Override
