@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
- xmlns:context = "http://www.springframework.org/schema/context"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:p="http://www.springframework.org/schema/p"
-xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans.xsd
                http://www.springframework.org/schema/context
       http://www.springframework.org/schema/context/spring-context.xsd">
 
-   <context:component-scan base-package="com.training" />
+	<bean id="empBean" class="com.training.springcore.model.Employee">
+		<constructor-arg value="10" type="int" index="0"></constructor-arg>
+		<constructor-arg value="Guest" index="1"></constructor-arg>
+		<constructor-arg value="20000" index="2"></constructor-arg>
+	</bean>
+
+	<bean id="address" class="com.training.springcore.model.Address">
+		<property name="city" value="city"></property>
+		<property name="state" value="state"></property>
+	</bean>
+
+	<bean id="advice" class="com.training.springcore.aop.BeforeAdvisor"></bean>
+
+
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="empBean"></property>
+		<property name="interceptorNames">
+			<!-- <list>
+				<value>advice</value>
+			</list> -->
+		</property>
+	</bean>
 </beans>

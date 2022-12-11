@@ -11,11 +11,6 @@ public class Employee {
 	
 	private Address adddress;
 	
-	@Autowired
-	public Employee(Address add) {
-		this.adddress= add;
-	}
-	
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}

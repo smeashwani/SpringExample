@@ -12,10 +12,8 @@ import com.training.springcore.model.Employee;
 public class Example_0_App {
 	public static void main(String[] args) {
 		ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
-		Employee bean = app.getBean("employee",Employee.class);
+		Employee bean = app.getBean("proxy",Employee.class);
 		System.out.println(bean);
 
-		Employee bean1 = app.getBean(Employee.class);
-		System.out.println(bean1);
 	}
 }
