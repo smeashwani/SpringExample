@@ -7,6 +7,7 @@ import org.springframework.aop.MethodBeforeAdvice;
 public class BeforeAdvisor implements MethodBeforeAdvice{  
     
     public void before(Method method, Object[] args,Object target)throws Throwable {
-        System.out.println("additional concern before actual logic");  
+    	
+        System.out.println("BeforeAdvisor additional concern before actual logic : "+ method.getName());  
     }
 } 

@@ -48,7 +48,13 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
+		System.out.println("inside the method");
+		//test();
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", adddress=" + adddress + "]";
+	}
+	private void test() {
+		ArithmeticException e = new ArithmeticException();
+		throw e;
 	}
 	
 }

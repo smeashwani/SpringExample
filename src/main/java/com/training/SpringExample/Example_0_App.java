@@ -14,6 +14,6 @@ public class Example_0_App {
 		ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
 		Employee bean = app.getBean("proxy",Employee.class);
 		System.out.println(bean);
-
 	}
 }
+
