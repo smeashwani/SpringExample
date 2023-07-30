@@ -13,8 +13,6 @@ public class App
 {
     public static void main( String[] args )
     {
-    	Employee e = new Employee();
-    	
 //    	Resource resource = new ClassPathResource("application.xml");
 //		BeanFactory factory = new XmlBeanFactory(resource);
 		
@@ -24,9 +22,11 @@ public class App
 		student.displayInfo();
 		student.setName("welcome");
 		
-		
-		Employee student1 = (Employee) factory.getBean("empBean1");
+		Employee student1 = (Employee) factory.getBean("empBean");
 		student1.displayInfo();
+		
+		Employee student2 = (Employee) factory.getBean("empBean1");
+		student2.displayInfo();
 	
     }
 }
