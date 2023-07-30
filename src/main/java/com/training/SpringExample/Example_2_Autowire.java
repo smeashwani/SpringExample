@@ -11,6 +11,5 @@ public class Example_2_Autowire {
 	    	ApplicationContext factory =    new ClassPathXmlApplicationContext("autowire.xml"); 
 			Employee student = (Employee) factory.getBean("empBean");
 			System.out.println(student);
-		
 	    }
 }

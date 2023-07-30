@@ -17,7 +17,7 @@ public class Example_6_beanLifeCycle {
 			System.out.println(obj);
 			
 			Employee obj1 =  factory.getBean(Employee.class);
-			obj.setAddress(obj1.applyAddress());
+			//obj.setAddress(obj1.applyAddress());
 			System.out.println(obj1);
 			obj1.getAddress().setCity("CITY1");
 			System.out.println(obj1);

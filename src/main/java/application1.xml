@@ -12,7 +12,7 @@
 	<bean id="java" class="java.lang.String">
 		<constructor-arg name="original" value="welcome to java"></constructor-arg>
 	</bean>
-	<bean id="empBean" class="com.training.springcore.model.Employee">
+	<bean id="empBean" class="com.training.springcore.model.Employee1">
 		<property name="name">
 			<ref bean="java" />
 		</property>
@@ -22,6 +22,20 @@
 			<ref bean="address"/>
 		</property>
 	
+		<property name="qualification">
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a platform</value>
+				<ref bean="java" />
+			</list>
+		</property>
+		<property name="answers">
+			<map>
+				<entry key="address" value-ref="address"></entry>
+				<entry key="key1" value="DUCAT"></entry>
+				<entry key="answer2" value="user2"></entry>
+			</map>
+		</property>
 	</bean>
 
 	

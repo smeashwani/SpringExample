@@ -11,7 +11,7 @@
 	</bean>
 	
 	<bean id="child" class="com.training.springcore.model.Child"
-		parent="parent" abstract="true">
+		parent="parent">
 		<property name="salary" value="22000"></property>
 		<property name="age" value="22"></property>
 	</bean>
