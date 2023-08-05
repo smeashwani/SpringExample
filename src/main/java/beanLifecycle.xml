@@ -9,9 +9,8 @@
 		<property name="city" value="ghaziabad"></property>
 		<property name="state" value="UP"></property>
 	</bean>
-	
-	<bean id="empA" class="com.training.springcore.model.Employee" init-method="afterPropertiesSet"  destroy-method="destroy">
-		<lookup-method name="applyAddress" bean="address1"/>
+	<bean id="empA" class="com.training.springcore.model.Employee6" init-method="xmlInitMethod"  destroy-method="xmlDestroyMethod">
+		
 	</bean>
 
 	

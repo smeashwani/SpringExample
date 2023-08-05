@@ -10,8 +10,11 @@
 		<property name="state" value="UP"></property>
 	</bean>
 	
-	<bean id="empA" class="com.training.springcore.model.Employee">
+	<bean id="empA" class="com.training.springcore.model.Employee5">
 		<lookup-method name="applyAddress" bean="address1"/>
+	<!-- 	<property name="address">
+			<ref bean="address1"/>
+		</property> -->
 	</bean>
 
 	
