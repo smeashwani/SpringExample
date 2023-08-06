@@ -11,7 +11,7 @@ public class Employee {
 	
 	private Address adddress;
 	
-	@Autowired
+	//@Autowired
 	public Employee(Address add) {
 		this.adddress= add;
 	}
@@ -47,7 +47,7 @@ public class Employee {
 		return adddress;
 	}
 	
-	
+	@Autowired
 	public void setAdddress(Address adddress) {
 		this.adddress = adddress;
 	}
