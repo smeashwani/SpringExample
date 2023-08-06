@@ -45,6 +45,7 @@ public class EmployeeDao {
 		});
 	}
 
+	@SuppressWarnings("unchecked")
 	public void saveEmployeeByNamedParameter(Employee e) {
 		String query = "insert into employee values (:id,:name,:salary)";
 
