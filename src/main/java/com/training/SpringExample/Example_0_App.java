@@ -1,6 +1,5 @@
 package com.training.SpringExample;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
