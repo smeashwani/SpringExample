@@ -25,10 +25,5 @@ public class Example_0_App
     	
     	emp = new Employee(22,"Guest",70_000);
     	edao.updateEmployee(emp);
-    	
-    	
-    	
-	
-	
     }
 }
