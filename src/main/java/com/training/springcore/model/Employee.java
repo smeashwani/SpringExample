@@ -8,10 +8,7 @@ public class Employee {
 	private String name;
 	private int salary;
 	
-	
-	
 	public Employee() {
-		// TODO Auto-generated constructor stub
 	}
 	public Employee(int id, String name, int salary) {
 		super();
@@ -36,9 +33,5 @@ public class Employee {
 	}
 	public void setSalary(int salary) {
 		this.salary = salary;
-	}
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
 }
