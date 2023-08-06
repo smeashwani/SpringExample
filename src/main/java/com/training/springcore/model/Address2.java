@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component(value="address2")
 public class Address2 implements IAddress {
-	private String city= "city";
-	private String state= "state";
+	private String city= "city2";
+	private String state= "state2";
 	
 	public Address2() {
 	}
@@ -26,7 +26,4 @@ public class Address2 implements IAddress {
 	public String toString() {
 		return "Address2 [city=" + city + ", state=" + state + "]";
 	}
-	
-	
-	
 }
