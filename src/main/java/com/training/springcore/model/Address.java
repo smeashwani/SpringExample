@@ -16,7 +16,7 @@ public class Address {
 	@Value("${common.city1: defaultCity}")
 	private String city;
 	//@Value("${Path}")
-	@Value("${USERNAME}")
+	@Value("${COMPUTERNAME}")
 	private String path;
 	@Value("${listOfValues}")
 	private String[] block;
