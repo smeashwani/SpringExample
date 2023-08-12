@@ -1,8 +1,5 @@
 package com.training.springcore.model;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
-
 public class Address {
 	private String city = "city";
 	private String state = "state";

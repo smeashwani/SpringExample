@@ -15,8 +15,6 @@ import com.training.springcore.model.ParentLookup;
 //@Import({Employee.class})
 public class AppConfig {
 
-	
-	
 	//@Bean
 	@Bean(initMethod="turnOn", destroyMethod="turnOff")
 	@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
