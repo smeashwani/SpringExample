@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Scope;
 
 import com.training.springcore.model.Address;
 import com.training.springcore.model.Child;
-import com.training.springcore.model.Parent;
+import com.training.springcore.model.ParentLookup;
 
 @Configuration
 @ComponentScan(basePackages= "com.training")

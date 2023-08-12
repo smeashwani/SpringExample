@@ -4,14 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 @Component
-public class Parent {
+abstract public class ParentLookup {
 
 	private String name;
 	
-	public Parent() {
+	public ParentLookup() {
 		System.out.println("Parent.Parent()");
 	}
 	
+	@Lookup
+	abstract public Child getChildDetails();
+	//public Child getChildDetails() {return null;}
+
 	@Autowired
 	private Child child;
 
@@ -30,4 +34,6 @@ public class Parent {
 	public void setChild(Child child) {
 		this.child = child;
 	}
+
+	
 }
