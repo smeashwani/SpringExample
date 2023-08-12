@@ -15,27 +15,13 @@ import com.training.springcore.model.Parent;
 //@Import({Employee.class})
 public class AppConfig {
 
+	
+	
+	//@Bean
 	@Bean(initMethod="turnOn", destroyMethod="turnOff")
 	@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 	public Address getAddress() {
 		return new Address();
-	}
-	
-	@Bean
-	public Parent getParent(){
-		Parent p  = new Parent() {
-			@Override
-			public Child getChildDetails() {
-				return getChild();
-			}
-		};
-		return p;
-	}
-	
-	@Bean
-	@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-	public Child getChild(){
-		return new Child();
 	}
 	
 }

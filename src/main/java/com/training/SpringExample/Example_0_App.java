@@ -2,10 +2,10 @@ package com.training.SpringExample;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import com.training.config.AppConfig;
 import com.training.springcore.model.Employee;
-import com.training.springcore.model.Parent;
 
 /**
  * Hello world!
@@ -16,20 +16,19 @@ public class Example_0_App {
 		//ApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
 		ApplicationContext app = new AnnotationConfigApplicationContext(AppConfig.class);
 		Employee bean = app.getBean(Employee.class);
+		System.out.println(bean);
 		System.out.println(bean.getAdddress());
+		
+		System.out.println("----------");
+		/*
+		 * Address addBean1 = app.getBean(Address.class); Address addBean2 =
+		 * app.getBean(Address.class); System.out.println(addBean1);
+		 * System.out.println(addBean2);
+		 */
 //
 //		Employee bean1 = app.getBean(Employee.class);
 //		System.out.println(bean1);
-//		app.registerShutdownHook();
+		//((AbstractApplicationContext)app).registerShutdownHook();
 //		
-//		bean = app.getBean(Parent.class);
-//		System.out.println(bean);
-//		System.out.println(bean.getChildDetails());
-//		System.out.println(bean.getChildDetails());
-//		
-//		bean = app.getBean(Parent.class);
-//		System.out.println(bean);
-//		System.out.println(bean.getChildDetails());
-//		System.out.println(bean.getChildDetails());
 	}
 }

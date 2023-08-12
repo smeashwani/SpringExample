@@ -2,7 +2,8 @@ package com.training.springcore.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
-
+import org.springframework.stereotype.Component;
+@Component
 abstract public class Parent {
 
 	private String name;
@@ -12,7 +13,10 @@ abstract public class Parent {
 	}
 	
 	@Lookup
-	abstract public Child getChildDetails();
+	//abstract public Child getChildDetails();
+	public Child getChildDetails() {
+		return null;
+	}
 
 	
 	@Autowired

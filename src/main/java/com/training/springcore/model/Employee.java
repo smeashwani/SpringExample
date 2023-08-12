@@ -1,42 +1,31 @@
 package com.training.springcore.model;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Employee {
 	private int id =101;
 	private String name="Guest";
 	private int salary = 10_000;
 	
-	@Autowired(required = false)
-	@Lazy
+	//@Autowired
 	private Address adddress;
 	
-	
-	@PostConstruct
 	public void turnOn() {
 		System.out.println("Load operating system");
 	}
 
-	@PreDestroy
 	public void turnOff() {
 		System.out.println("Close all programs");
 	}
 	
-	public Employee() {
-		System.out.println("Employee.Employee()");
-	}
-	public Employee(int id, String name, int salary) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
+	public Employee(Address adddress) {
+		this.adddress = adddress;
 	}
 	public int getId() {
 		return id;
@@ -59,8 +48,6 @@ public class Employee {
 	public Address getAdddress() {
 		return adddress;
 	}
-	
-	
 	public void setAdddress(Address adddress) {
 		this.adddress = adddress;
 	}
@@ -68,5 +55,4 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", adddress=" + adddress + "]";
 	}
-	
 }

@@ -1,5 +1,8 @@
 package com.training.springcore.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Child {
 	
 	private String name;

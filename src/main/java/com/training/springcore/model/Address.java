@@ -35,9 +35,9 @@ public class Address {
 		this.state = state;
 	}
 
-	@Override
-	public String toString() {
-		return "Address [city=" + city + ", state=" + state + "]";
-	}
+	/*
+	 * @Override public String toString() { return "Address [city=" + city +
+	 * ", state=" + state + "]"; }
+	 */
 
 }
